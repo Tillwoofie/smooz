@@ -14,3 +14,12 @@
 
     - name: Install python34
       yum: name="python34u" state=present
+
+    - name: Install python34-pip
+      yum: name="python34u-pip" state=present
+
+    - name: Install python34-dev
+      yum: name="python34u-dev" state=present
+
+    - name: Install python34-tools
+      yum: name="python34u-tools" state=present
