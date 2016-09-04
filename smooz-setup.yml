@@ -6,6 +6,9 @@
     - name: Install Percona external repo
       yum: name=http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm state=present
 
+    - name: Install group development tools
+      yum: name="@development tools" state=present
+
     - name: Install virtualenv
       yum: name="python-virtualenv" state=present
 
@@ -29,3 +32,17 @@
 
     - name: Install Percona-devel
       yum: name="Percona-Server-devel-57" state=present
+
+    - name: Install Nginx
+      yum: name="nginx" state=present
+
+    - name: Install Supervisord
+      yum: name="supervisor" state=present
+
+    - name: Make required app directories
+      file: path={{ item }} owner=root group=root mode=0755 state=directory
+      with_items:
+        - /data/
+        - /data/virtualenv/
+        - /data/web/
+        - /data/virtualenv/smooz
