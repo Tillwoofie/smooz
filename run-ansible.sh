@@ -22,6 +22,6 @@ if [ ! $(rpm -qa | grep "ansible") ] ;
 fi
 
 echo "Running ansible against localhost"
-ansible -i 127.0.0.1, -c local ./smooz-setup.yml
+ansible-playbook -i 127.0.0.1, -c local ./smooz-setup.yml
 
 rm ./smooz-setup.retry
