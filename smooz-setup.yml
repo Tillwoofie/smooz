@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: Install IUS external repo
+      yum: name=https://centos7.iuscommunity.org/ius-release.rpm state=present
+    - name: Install Percona external repo
+      yum: name=http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm state=present
+
