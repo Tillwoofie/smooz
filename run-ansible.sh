@@ -24,4 +24,7 @@ fi
 echo "Running ansible against localhost"
 ansible-playbook -i 127.0.0.1, -c local ./smooz-setup.yml
 
-/bin/rm ./smooz-setup.retry
+if [ -f ./smooz-setup.retry ]
+  then
+    /bin/rm ./smooz-setup.retry
+fi

@@ -23,3 +23,9 @@
 
     - name: Install python34-tools
       yum: name="python34u-tools" state=present
+
+    - name: Install Percona
+      yum: name="Percona-Server-server" state=present
+
+    - name: Install Percona-devel
+      yum: name="Percona-Server-devel" state=present
